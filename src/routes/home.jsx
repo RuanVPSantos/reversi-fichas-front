@@ -10,12 +10,14 @@ import {useState} from "react";
 
 export default function Home() {
     const [fichas, setFichas] = useState([]);
+    const url_baseline = import.meta.env.VITE_API_URL
     const atualizarVista = async () => {
-        await axios.get("https://reversi-fichas-backend.up.railway.app/fichas").then((response) => {
+        console.log(url_baseline)
+        await axios.get(`${url_baseline}/fichas/`).then((response) => {
             setFichas(response.data);
     })}
     const criarFicha = async () => {
-        await axios.get("https://reversi-fichas-backend.up.railway.app/fichas/criar").then((response) => {
+        await axios.get(`${url_baseline}/fichas/criar/`).then((response) => {
             setFichas([...fichas, response])
             atualizarVista();
         })
