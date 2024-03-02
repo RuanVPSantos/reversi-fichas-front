@@ -18,7 +18,7 @@ export default function Home() {
     })}
     const criarFicha = async () => {
         await axios.get(`${url_baseline}/fichas/criar/`).then((response) => {
-            setFichas([...fichas, response])
+            setFichas([response, ...fichas])
             atualizarVista();
         })
     }
