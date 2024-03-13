@@ -29,8 +29,6 @@ export default function Home() {
     return (
     <React.Fragment>
         <CssBaseline />
-        <Container maxWidth="sm">
-            <Box m={4} />
             <Button variant="outlined" onClick={criarFicha}>Criar Nova Ficha</Button>
             <Grid container mt={1} spacing={4}>
                     { fichas.map((ficha) => {
@@ -40,7 +38,6 @@ export default function Home() {
                             </Grid>
                         )}) }
             </Grid>
-        </Container>
     </React.Fragment>
   );
 }
